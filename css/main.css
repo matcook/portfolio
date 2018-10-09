@@ -21,7 +21,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url(/dist/images/bg1.jpg);
+  background: url(/images/bg1.jpg);
   background-size: cover; }
   #home:after {
     content: '';
