@@ -23,7 +23,8 @@ body {
   justify-content: center;
   align-items: center;
   background-image: url("../images/bg1.jpg");
-  background-size: cover; }
+  background-size: cover;
+  position: relative; }
   #home:after {
     content: '';
     display: block;
