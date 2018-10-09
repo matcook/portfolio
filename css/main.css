@@ -9,15 +9,15 @@
 
 h1,
 h2 {
-  font-family: 'Proza Libre', sans-serif;
+  font-family: "Proza Libre", sans-serif;
   color: white; }
 
 body {
   background-color: #040f16;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 #home {
-  color: #E7ECEF;
+  color: #e7ecef;
   height: 100vh;
   flex-direction: column;
   justify-content: center;
@@ -26,7 +26,7 @@ body {
   background-size: cover;
   position: relative; }
   #home:after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     top: 0;
@@ -43,6 +43,7 @@ body {
     color: #d90368;
     font-size: 1em;
     border: 2px solid #d90368;
+    border-radius: 5px;
     height: 40px;
     width: 160px;
     text-align: center;
