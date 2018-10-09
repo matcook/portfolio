@@ -3,7 +3,7 @@ secondary: #E7ECEF,
 secondary-dark: #DADEE1,
 accent: #d90368);
 
-$background: url(/images/bg1.jpg);
+$background: url(/dist/images/bg1.jpg);
 
 @function color($color-name) {
   @return map-get($colors, $color-name)
