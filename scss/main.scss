@@ -1,12 +1,12 @@
 $colors: (primary: #040f16,
-secondary: #E7ECEF,
-secondary-dark: #DADEE1,
+secondary: #e7ecef,
+secondary-dark: #dadee1,
 accent: #d90368);
 
-$background: url('../images/bg1.jpg');
+$background: url("../images/bg1.jpg");
 
 @function color($color-name) {
-  @return map-get($colors, $color-name)
+  @return map-get($colors, $color-name);
 }
 
 * {
@@ -22,13 +22,13 @@ $background: url('../images/bg1.jpg');
 
 h1,
 h2 {
-  font-family: 'Proza Libre', sans-serif;
+  font-family: "Proza Libre", sans-serif;
   color: white;
 }
 
 body {
   background-color: color(primary);
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 #home {
@@ -42,7 +42,7 @@ body {
   position: relative;
 
   &:after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     top: 0;
@@ -63,6 +63,7 @@ body {
     color: color(accent);
     font-size: 1em;
     border: 2px solid color(accent);
+    border-radius: 5px;
     height: 40px;
     width: 160px;
     text-align: center;
