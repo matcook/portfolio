@@ -1,0 +1,75 @@
+$colors: (primary: #040f16,
+secondary: #E7ECEF,
+secondary-dark: #DADEE1,
+accent: #d90368);
+
+$background: url(/images/bg1.jpg);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name)
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1,
+h2 {
+  font-family: 'Proza Libre', sans-serif;
+}
+
+body {
+  background-color: color(primary);
+  font-family: 'Open Sans', sans-serif;
+}
+
+#home {
+  color: color(secondary);
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $background;
+  background-size: cover;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: color(primary);
+    opacity: 0.95;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2em;
+    z-index: 1;
+  }
+
+  .btn {
+    color: color(accent);
+    font-size: 1em;
+    border: 2px solid color(accent);
+    height: 40px;
+    width: 160px;
+    text-align: center;
+    padding: 5px;
+    margin-top: 20px;
+    z-index: 1;
+
+    i {
+      padding-left: 10px;
+    }
+  }
+}
