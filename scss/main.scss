@@ -1,3 +1,5 @@
+//VARIABLES
+
 $colors: (primary: #040f16,
 secondary: #e7ecef,
 secondary-dark: #dadee1,
@@ -5,9 +7,21 @@ accent: #d90368);
 
 $background: url("../images/bg1.jpg");
 
+// MIXINS
+
+@mixin desktop {
+  @media(min-width: 1248px) {
+    @content
+  }
+}
+
+// FUNCTIONS
+
 @function color($color-name) {
   @return map-get($colors, $color-name);
 }
+
+// GENERAL, RESETS, ETC
 
 * {
   margin: 0;
@@ -23,7 +37,7 @@ $background: url("../images/bg1.jpg");
 h1,
 h2 {
   font-family: "Proza Libre", sans-serif;
-  color: white;
+
 }
 
 body {
@@ -31,9 +45,24 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+#home,
+#about,
+#projects,
+#contact {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.wrapper {
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 1em 0 1em;
+}
+
+// HOME SECTION
+
 #home {
   color: color(secondary);
-  height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -62,8 +91,9 @@ body {
   .btn {
     color: color(accent);
     font-size: 1em;
+    font-weight: 800;
     border: 2px solid color(accent);
-    border-radius: 5px;
+    border-radius: 2px;
     height: 40px;
     width: 160px;
     text-align: center;
@@ -73,6 +103,97 @@ body {
 
     i {
       padding-left: 10px;
+    }
+  }
+}
+
+// ABOUT SECTION
+
+#about {
+  background: color(secondary);
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  h2 {
+    font-size: 3em;
+    line-height: 200px;
+    height: 200px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .wrapper {
+    width: 100%;
+    min-height: calc(100vh - 120px);
+    height: auto;
+
+    .bio {
+      min-width: 350px;
+      width: 100%;
+      flex-direction: column;
+
+      @include desktop {
+        max-width: 400px;
+      }
+
+      .bio-pic {
+        height: 250px;
+        width: 250px;
+        border-radius: 100%;
+        border: solid 1px black;
+        align-self: center;
+      }
+
+      .bio-caption {
+        text-align: center;
+        max-width: 500px;
+        margin-bottom: 30px;
+        align-self: center;
+
+        span {
+          font-family: "Proza Libre", sans-serif;
+          font-weight: 800;
+          font-size: 1.2em;
+          line-height: 60px;
+        }
+      }
+    }
+
+    .skills {
+      width: 100%;
+      min-height: 400px;
+      max-height: 600px;
+      height: auto;
+
+
+      @include desktop {
+        padding-left: 100px;
+        max-width: 800px;
+      }
+
+      .graph {
+        height: 30px;
+        width: 100%;
+        flex-wrap: nowrap;
+
+        .graph-title {
+          width: 100px;
+          text-align: center;
+          background: grey;
+        }
+
+        .graph-filled {
+          width: 85%;
+          background: green;
+        }
+
+        .graph-empty {
+          text-align: center;
+          width: 15%;
+          background: red;
+        }
+      }
     }
   }
 }
