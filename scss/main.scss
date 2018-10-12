@@ -249,15 +249,18 @@ nav {
     min-height: calc(100vh - 120px);
     height: auto;
     justify-content: center;
-    margin-bottom: 100px;
+
+    @include desktop {
+      margin-bottom: 100px;
+    }
 
     .project-card {
       border: solid 1px black;
-      min-width: 350px;
-      min-height: 350px;
+      min-width: 300px;
+      min-height: 300px;
       width: 500px;
       height: 400px;
-      margin: 25px;
+      margin: 0 25px 25px 25px;
 
       .card-caption {
         background: color(primary);
@@ -265,8 +268,8 @@ nav {
         height: 50px;
         line-height: 50px;
         padding-left: 15px;
-
       }
+
     }
   }
 }

@@ -159,15 +159,17 @@ nav {
     width: 100%;
     min-height: calc(100vh - 120px);
     height: auto;
-    justify-content: center;
-    margin-bottom: 100px; }
+    justify-content: center; }
+    @media (min-width: 1248px) {
+      #projects .wrapper {
+        margin-bottom: 100px; } }
     #projects .wrapper .project-card {
       border: solid 1px black;
-      min-width: 350px;
-      min-height: 350px;
+      min-width: 300px;
+      min-height: 300px;
       width: 500px;
       height: 400px;
-      margin: 25px; }
+      margin: 0 25px 25px 25px; }
       #projects .wrapper .project-card .card-caption {
         background: #040f16;
         color: #e7ecef;
