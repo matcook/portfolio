@@ -152,13 +152,15 @@ nav {
 
   h2 {
     font-size: 2em;
-    line-height: 200px;
-    height: 200px;
+    line-height: 100px;
+    height: 100px;
     text-align: center;
     width: 100%;
 
     @include desktop {
       font-size: 3em;
+      height: 200px;
+      line-height: 200px;
     }
   }
 

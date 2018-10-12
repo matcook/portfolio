@@ -90,13 +90,15 @@ nav {
   justify-content: center; }
   #about h2 {
     font-size: 2em;
-    line-height: 200px;
-    height: 200px;
+    line-height: 100px;
+    height: 100px;
     text-align: center;
     width: 100%; }
     @media (min-width: 1248px) {
       #about h2 {
-        font-size: 3em; } }
+        font-size: 3em;
+        height: 200px;
+        line-height: 200px; } }
   #about .wrapper {
     width: 100%;
     min-height: calc(100vh - 120px);
