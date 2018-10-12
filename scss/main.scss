@@ -72,6 +72,14 @@ body {
   font-family: $font-body;
 }
 
+.btn {
+  color: color(accent);
+  font-size: 1em;
+  font-weight: 800;
+  border: 2px solid color(accent);
+  border-radius: 3px;
+}
+
 #home,
 #about,
 #projects,
@@ -139,14 +147,14 @@ nav {
     text-align: center;
     font-size: 2em;
     z-index: 1;
+
+    @include desktop {
+      font-size: 2em;
+    }
   }
 
   .btn {
-    color: color(accent);
-    font-size: 1em;
-    font-weight: 800;
-    border: 2px solid color(accent);
-    border-radius: 2px;
+
     height: 40px;
     width: 160px;
     text-align: center;
@@ -186,9 +194,14 @@ nav {
         padding: 0 25px;
         margin-bottom: 50px;
 
+        span {
+          border-radius: 3px 3px 0 0;
+        }
+
         img {
           display: block;
           max-width: 100%;
+          border-radius: 0 0 3px 3px;
         }
 
         @include tablet {
@@ -236,7 +249,7 @@ nav {
       margin: 2px;
       background: color(secondary);
       border: none;
-      border-radius: 2px;
+      border-radius: 3px;
 
       &::placeholder {
         font-size: 1em;
@@ -250,11 +263,6 @@ nav {
     }
 
     .btn {
-      color: color(accent);
-      font-size: 1em;
-      font-weight: 800;
-      border: 2px solid color(accent);
-      border-radius: 2px;
       height: 40px;
       line-height: 35px;
       width: 130px;

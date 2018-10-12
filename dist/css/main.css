@@ -33,6 +33,13 @@ body {
   background-color: #040f16;
   font-family: "Open Sans", sans-serif; }
 
+.btn {
+  color: #d90368;
+  font-size: 1em;
+  font-weight: 800;
+  border: 2px solid #d90368;
+  border-radius: 3px; }
+
 #home,
 #about,
 #projects,
@@ -85,12 +92,10 @@ nav {
     text-align: center;
     font-size: 2em;
     z-index: 1; }
+    @media (min-width: 1248px) {
+      #home h1 {
+        font-size: 2em; } }
   #home .btn {
-    color: #d90368;
-    font-size: 1em;
-    font-weight: 800;
-    border: 2px solid #d90368;
-    border-radius: 2px;
     height: 40px;
     width: 160px;
     text-align: center;
@@ -117,9 +122,12 @@ nav {
     #projects .wrapper .grid .project-card {
       padding: 0 25px;
       margin-bottom: 50px; }
+      #projects .wrapper .grid .project-card span {
+        border-radius: 3px 3px 0 0; }
       #projects .wrapper .grid .project-card img {
         display: block;
-        max-width: 100%; }
+        max-width: 100%;
+        border-radius: 0 0 3px 3px; }
       @media (min-width: 600px) {
         #projects .wrapper .grid .project-card {
           width: 50%; } }
@@ -155,7 +163,7 @@ nav {
       margin: 2px;
       background: #e7ecef;
       border: none;
-      border-radius: 2px; }
+      border-radius: 3px; }
       #contact .wrapper input::placeholder,
       #contact .wrapper textarea::placeholder {
         font-size: 1em;
@@ -164,11 +172,6 @@ nav {
       height: 120px;
       resize: none; }
     #contact .wrapper .btn {
-      color: #d90368;
-      font-size: 1em;
-      font-weight: 800;
-      border: 2px solid #d90368;
-      border-radius: 2px;
       height: 40px;
       line-height: 35px;
       width: 130px;
