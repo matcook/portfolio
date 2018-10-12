@@ -167,9 +167,8 @@ nav {
     #projects .wrapper .project-card {
       border: solid 1px black;
       min-width: 300px;
-      min-height: 300px;
       width: 350px;
-      height: 350px;
+      height: 300px;
       margin: 0 25px 50px 25px;
       border-radius: 2px; }
       #projects .wrapper .project-card .card-caption {
