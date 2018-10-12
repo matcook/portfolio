@@ -5,6 +5,11 @@ secondary: #e7ecef,
 secondary-dark: #dadee1,
 accent: #d90368);
 
+$font-heading: 'Proza Libre',
+sans-serif;
+$font-body: 'Open Sans',
+sans-serif;
+
 $background: url("../images/bg1.jpg");
 
 // MIXINS
@@ -36,13 +41,13 @@ $background: url("../images/bg1.jpg");
 
 h1,
 h2 {
-  font-family: "Proza Libre", sans-serif;
+  font-family: $font-heading;
 
 }
 
 body {
   background-color: color(primary);
-  font-family: "Open Sans", sans-serif;
+  font-family: $font-body;
 }
 
 #home,
@@ -58,6 +63,36 @@ body {
   max-width: 1200px;
   margin: 0 1em 0 1em;
 }
+
+// NAV BAR
+
+nav {
+  height: 60px;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1240px;
+  background: color(primary);
+
+  ul {
+    list-style-type: none;
+    width: 100%;
+    max-width: 400px;
+    justify-content: space-between;
+
+    li {
+      display: inline;
+      padding: 15px;
+
+      a {
+        text-decoration: none;
+        color: color(secondary);
+        // font-weight: 600;
+        font-family: $font-heading;
+      }
+    }
+  }
+}
+
 
 // HOME SECTION
 
@@ -116,11 +151,15 @@ body {
   justify-content: center;
 
   h2 {
-    font-size: 3em;
+    font-size: 2em;
     line-height: 200px;
     height: 200px;
     text-align: center;
     width: 100%;
+
+    @include desktop {
+      font-size: 3em;
+    }
   }
 
   .wrapper {
@@ -152,7 +191,7 @@ body {
         align-self: center;
 
         span {
-          font-family: "Proza Libre", sans-serif;
+          font-family: $font-heading;
           font-weight: 800;
           font-size: 1.2em;
           line-height: 60px;
