@@ -1,55 +1,64 @@
 //VARIABLES
 
-$colors: (
-  primary: #040f16,
-  secondary: #e7ecef,
-  secondary-dark: #dadee1,
-  accent: #d90368
-);
+$colors: (primary: #040f16,
+secondary: #e7ecef,
+secondary-dark: #dadee1,
+accent: #d90368);
 
-$font-heading: "Proza Libre", sans-serif;
-$font-body: "Open Sans", sans-serif;
+$font-heading: "Proza Libre",
+sans-serif;
+$font-body: "Open Sans",
+sans-serif;
 $background: url("../images/bg1.jpg");
+
 // MIXINS
 @mixin desktop {
   @media (min-width: 1248px) {
     @content;
   }
 }
+
 // FUNCTIONS
 @function color($color-name) {
   @return map-get($colors, $color-name);
 }
+
 // GENERAL, RESETS, ETC
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 .flex {
   display: flex;
   flex-wrap: wrap;
 }
+
 h1,
 h2 {
   font-family: $font-heading;
 }
+
 h2 {
   font-size: 2em;
   line-height: 100px;
   height: 100px;
   text-align: center;
   width: 100%;
+
   @include desktop {
     font-size: 3em;
     height: 200px;
     line-height: 200px;
   }
 }
+
 body {
   background-color: color(primary);
   font-family: $font-body;
 }
+
 #home,
 #about,
 #projects,
@@ -57,11 +66,13 @@ body {
   min-height: 100vh;
   width: 100%;
 }
+
 .wrapper {
   height: 100%;
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 1em 0 1em;
 }
+
 // NAV BAR
 nav {
   height: 60px;
@@ -69,14 +80,17 @@ nav {
   margin: 0 auto;
   max-width: 1240px;
   background: color(primary);
+
   ul {
     list-style-type: none;
     width: 100%;
     max-width: 400px;
     justify-content: space-between;
+
     li {
       display: inline;
       padding: 15px;
+
       a {
         text-decoration: none;
         color: color(secondary); // font-weight: 600;
@@ -85,6 +99,7 @@ nav {
     }
   }
 }
+
 // HOME SECTION
 #home {
   color: color(secondary);
@@ -94,6 +109,7 @@ nav {
   background-image: $background;
   background-size: cover;
   position: relative;
+
   &:after {
     content: "";
     display: block;
@@ -105,11 +121,13 @@ nav {
     background: color(primary);
     opacity: 0.95;
   }
+
   h1 {
     text-align: center;
     font-size: 2em;
     z-index: 1;
   }
+
   .btn {
     color: color(accent);
     font-size: 1em;
@@ -122,27 +140,35 @@ nav {
     padding: 5px;
     margin-top: 20px;
     z-index: 1;
+
     i {
       padding-left: 10px;
     }
   }
 }
+
 // ABOUT SECTION
 #about {
   background: color(secondary);
   align-items: center;
   justify-content: center;
+
   .wrapper {
     width: 100%;
     min-height: calc(100vh - 120px);
     height: auto;
+    justify-content: space-between;
+
     .bio {
       min-width: 350px;
       width: 100%;
       flex-direction: column;
+      padding: 25px;
+
       @include desktop {
         max-width: 400px;
       }
+
       .bio-pic {
         height: 250px;
         width: 250px;
@@ -150,11 +176,13 @@ nav {
         border: solid 1px black;
         align-self: center;
       }
+
       .bio-caption {
         text-align: center;
         max-width: 500px;
         margin-bottom: 30px;
         align-self: center;
+
         span {
           font-family: $font-heading;
           font-weight: 800;
@@ -163,30 +191,35 @@ nav {
         }
       }
     }
+
     .skills {
       width: 100%;
       min-height: 400px;
       max-height: 600px;
-      padding-left: 10px;
-      padding-right: 10px;
+      padding: 25px;
       height: auto;
+
       @include desktop {
-        padding-left: 100px;
+        // padding-left: 100px;
         max-width: 800px;
       }
+
       .graph {
         height: 30px;
         width: 100%;
         flex-wrap: nowrap;
+
         .graph-title {
           width: 100px;
           text-align: center;
           background: grey;
         }
+
         .graph-filled {
           width: 85%;
           background: green;
         }
+
         .graph-empty {
           text-align: center;
           width: 15%;
@@ -196,20 +229,24 @@ nav {
     }
   }
 }
+
 // PROJECTS SECTION
 #projects {
   background: color(secondary-dark);
   align-items: center;
   justify-content: center;
+
   .wrapper {
     width: 100%;
     min-height: calc(100vh - 120px);
     height: auto;
     justify-content: center;
+
     @include desktop {
       margin-bottom: 50px;
       justify-content: space-between;
     }
+
     .project-card {
       border: solid 1px black;
       min-width: 300px;
@@ -217,6 +254,7 @@ nav {
       height: 300px;
       margin: 0 25px 50px 25px;
       border-radius: 2px;
+
       .card-caption {
         background: color(primary);
         color: color(secondary);
@@ -229,11 +267,13 @@ nav {
     }
   }
 }
+
 // CONTACT SECTION
 #contact {
   color: color(secondary);
   justify-content: center;
   height: auto;
+
   .wrapper {
     flex-direction: column;
     justify-content: flex-end;
@@ -241,6 +281,7 @@ nav {
     min-width: 320px;
     padding: 10px;
     font-size: 1em;
+
     input,
     textarea {
       min-width: 300px;
@@ -250,15 +291,18 @@ nav {
       background: color(secondary);
       border: none;
       border-radius: 2px;
+
       &::placeholder {
         font-size: 1em;
         font-family: $font-body;
       }
     }
+
     textarea {
       height: 120px;
       resize: none;
     }
+
     .btn {
       color: color(accent);
       font-size: 1em;
@@ -274,4 +318,5 @@ nav {
     }
   }
 }
+
 // FOOTER
