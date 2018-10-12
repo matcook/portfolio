@@ -18,6 +18,12 @@ $background: url("../images/bg1.jpg");
   }
 }
 
+@mixin tablet {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
 // FUNCTIONS
 @function color($color-name) {
   @return map-get($colors, $color-name);
@@ -36,7 +42,8 @@ $background: url("../images/bg1.jpg");
 }
 
 h1,
-h2 {
+h2,
+span {
   font-family: $font-heading;
 }
 
@@ -63,14 +70,13 @@ body {
 #about,
 #projects,
 #contact {
-  min-height: 100vh;
+  // min-height: 100vh;
   width: 100%;
 }
 
 .wrapper {
   height: 100%;
-  max-width: 1250px;
-  margin: 0 1em 0 1em;
+  max-width: 1200px;
 }
 
 // NAV BAR
@@ -109,6 +115,7 @@ nav {
   background-image: $background;
   background-size: cover;
   position: relative;
+  height: 100vh;
 
   &:after {
     content: "";
@@ -150,119 +157,52 @@ nav {
 // ABOUT SECTION
 #about {
   background: color(secondary);
-  align-items: center;
-  justify-content: center;
-
-  .wrapper {
-    width: 100%;
-    min-height: calc(100vh - 120px);
-    height: auto;
-    justify-content: space-between;
-
-    .bio {
-      min-width: 350px;
-      width: 100%;
-      flex-direction: column;
-      padding: 25px;
-
-      @include desktop {
-        max-width: 400px;
-      }
-
-      .bio-pic {
-        height: 250px;
-        width: 250px;
-        border-radius: 100%;
-        border: solid 1px black;
-        align-self: center;
-      }
-
-      .bio-caption {
-        text-align: center;
-        max-width: 500px;
-        margin-bottom: 30px;
-        align-self: center;
-
-        span {
-          font-family: $font-heading;
-          font-weight: 800;
-          font-size: 1.2em;
-          line-height: 60px;
-        }
-      }
-    }
-
-    .skills {
-      width: 100%;
-      min-height: 400px;
-      max-height: 600px;
-      padding: 25px;
-      height: auto;
-
-      @include desktop {
-        // padding-left: 100px;
-        max-width: 800px;
-      }
-
-      .graph {
-        height: 30px;
-        width: 100%;
-        flex-wrap: nowrap;
-
-        .graph-title {
-          width: 100px;
-          text-align: center;
-          background: grey;
-        }
-
-        .graph-filled {
-          width: 85%;
-          background: green;
-        }
-
-        .graph-empty {
-          text-align: center;
-          width: 15%;
-          background: red;
-        }
-      }
-    }
-  }
 }
 
 // PROJECTS SECTION
 #projects {
   background: color(secondary-dark);
-  align-items: center;
-  justify-content: center;
+  height: auto;
 
   .wrapper {
-    width: 100%;
-    min-height: calc(100vh - 120px);
-    height: auto;
-    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
 
-    @include desktop {
-      margin-bottom: 50px;
-      justify-content: space-between;
-    }
+    .grid {
+      margin-bottom: 40px;
 
-    .project-card {
-      border: solid 1px black;
-      min-width: 300px;
-      width: 350px;
-      height: 300px;
-      margin: 0 25px 50px 25px;
-      border-radius: 2px;
+      @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+      }
 
-      .card-caption {
-        background: color(primary);
-        color: color(secondary);
-        height: 50px;
-        line-height: 50px;
-        padding-left: 15px;
-        font-family: $font-heading;
-        text-transform: uppercase;
+      .project-card {
+        padding: 0 25px;
+        margin-bottom: 50px;
+
+        img {
+          display: block;
+          max-width: 100%;
+        }
+
+        @include tablet {
+          width: 50%;
+        }
+
+        @include desktop {
+          width: calc(100%/3);
+        }
+
+        .project-title {
+          display: block;
+          width: 100%;
+          color: color(secondary);
+          background: color(primary);
+          height: 35px;
+          line-height: 35px;
+          padding-left: 10px;
+        }
       }
     }
   }
@@ -276,11 +216,12 @@ nav {
 
   .wrapper {
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     width: 500px;
     min-width: 320px;
     padding: 10px;
     font-size: 1em;
+    min-height: calc(100vh - 120px);
 
     input,
     textarea {
