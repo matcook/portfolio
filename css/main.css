@@ -130,6 +130,8 @@ nav {
       width: 100%;
       min-height: 400px;
       max-height: 600px;
+      padding-left: 10px;
+      padding-right: 10px;
       height: auto; }
       @media (min-width: 1248px) {
         #about .wrapper .skills {
@@ -176,4 +178,46 @@ nav {
         color: #e7ecef;
         height: 50px;
         line-height: 50px;
-        padding-left: 15px; }
+        padding-left: 15px;
+        font-family: "Proza Libre", sans-serif;
+        text-transform: uppercase; }
+
+#contact {
+  color: #e7ecef;
+  justify-content: center;
+  height: auto; }
+  #contact .wrapper {
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 500px;
+    min-width: 320px;
+    padding: 10px;
+    font-size: 1em; }
+    #contact .wrapper input,
+    #contact .wrapper textarea {
+      min-width: 300px;
+      height: 35px;
+      padding: 5px;
+      margin: 2px;
+      background: #e7ecef;
+      border: none;
+      border-radius: 2px; }
+      #contact .wrapper input::placeholder,
+      #contact .wrapper textarea::placeholder {
+        font-size: 1em;
+        font-family: "Open Sans", sans-serif; }
+    #contact .wrapper textarea {
+      height: 120px;
+      resize: none; }
+    #contact .wrapper .btn {
+      color: #d90368;
+      font-size: 1em;
+      font-weight: 800;
+      border: 2px solid #d90368;
+      border-radius: 2px;
+      height: 40px;
+      line-height: 35px;
+      width: 130px;
+      text-align: center;
+      margin-top: 2px;
+      align-self: flex-end; }
