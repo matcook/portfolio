@@ -42,7 +42,20 @@ $background: url("../images/bg1.jpg");
 h1,
 h2 {
   font-family: $font-heading;
+}
 
+h2 {
+  font-size: 2em;
+  line-height: 100px;
+  height: 100px;
+  text-align: center;
+  width: 100%;
+
+  @include desktop {
+    font-size: 3em;
+    height: 200px;
+    line-height: 200px;
+  }
 }
 
 body {
@@ -147,22 +160,7 @@ nav {
 #about {
   background: color(secondary);
   align-items: center;
-  flex-wrap: wrap;
   justify-content: center;
-
-  h2 {
-    font-size: 2em;
-    line-height: 100px;
-    height: 100px;
-    text-align: center;
-    width: 100%;
-
-    @include desktop {
-      font-size: 3em;
-      height: 200px;
-      line-height: 200px;
-    }
-  }
 
   .wrapper {
     width: 100%;
@@ -238,3 +236,41 @@ nav {
     }
   }
 }
+
+// PROJECTS SECTION
+
+#projects {
+  background: color(secondary-dark);
+  align-items: center;
+  justify-content: center;
+
+  .wrapper {
+    width: 100%;
+    min-height: calc(100vh - 120px);
+    height: auto;
+    justify-content: center;
+    margin-bottom: 100px;
+
+    .project-card {
+      border: solid 1px black;
+      min-width: 350px;
+      min-height: 350px;
+      width: 500px;
+      height: 400px;
+      margin: 25px;
+
+      .card-caption {
+        background: color(primary);
+        color: color(secondary);
+        height: 50px;
+        line-height: 50px;
+        padding-left: 15px;
+
+      }
+    }
+  }
+}
+
+// CONTACT SECTION
+
+// FOOTER
