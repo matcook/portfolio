@@ -251,16 +251,18 @@ nav {
     justify-content: center;
 
     @include desktop {
-      margin-bottom: 100px;
+      margin-bottom: 50px;
+      justify-content: space-between;
     }
 
     .project-card {
       border: solid 1px black;
       min-width: 300px;
       min-height: 300px;
-      width: 500px;
-      height: 400px;
-      margin: 0 25px 25px 25px;
+      width: 350px;
+      height: 350px;
+      margin: 0 25px 50px 25px;
+      border-radius: 2px;
 
       .card-caption {
         background: color(primary);
