@@ -11,6 +11,18 @@ h1,
 h2 {
   font-family: "Proza Libre", sans-serif; }
 
+h2 {
+  font-size: 2em;
+  line-height: 100px;
+  height: 100px;
+  text-align: center;
+  width: 100%; }
+  @media (min-width: 1248px) {
+    h2 {
+      font-size: 3em;
+      height: 200px;
+      line-height: 200px; } }
+
 body {
   background-color: #040f16;
   font-family: "Open Sans", sans-serif; }
@@ -86,19 +98,7 @@ nav {
 #about {
   background: #e7ecef;
   align-items: center;
-  flex-wrap: wrap;
   justify-content: center; }
-  #about h2 {
-    font-size: 2em;
-    line-height: 100px;
-    height: 100px;
-    text-align: center;
-    width: 100%; }
-    @media (min-width: 1248px) {
-      #about h2 {
-        font-size: 3em;
-        height: 200px;
-        line-height: 200px; } }
   #about .wrapper {
     width: 100%;
     min-height: calc(100vh - 120px);
@@ -150,3 +150,27 @@ nav {
           text-align: center;
           width: 15%;
           background: red; }
+
+#projects {
+  background: #dadee1;
+  align-items: center;
+  justify-content: center; }
+  #projects .wrapper {
+    width: 100%;
+    min-height: calc(100vh - 120px);
+    height: auto;
+    justify-content: center;
+    margin-bottom: 100px; }
+    #projects .wrapper .project-card {
+      border: solid 1px black;
+      min-width: 350px;
+      min-height: 350px;
+      width: 500px;
+      height: 400px;
+      margin: 25px; }
+      #projects .wrapper .project-card .card-caption {
+        background: #040f16;
+        color: #e7ecef;
+        height: 50px;
+        line-height: 50px;
+        padding-left: 15px; }
