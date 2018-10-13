@@ -10,6 +10,7 @@
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Proza+Libre" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="../node_modules/sal.js/dist/sal.css">
 </head>
 
 <body>
@@ -36,9 +37,9 @@
 
   <!-- ABOUT -->
   <section id="about">
-    <h2>About</h2>
+    <h2 data-sal-duration='1200' data-sal='slide-up' data-sal-delay='300'>About</h2>
     <div class="wrapper flex">
-      <div class="bio">
+      <div data-sal-duration='1200' data-sal='slide-right' data-sal-delay='600' class="bio">
         <img src="http://placehold.it/800x800">
         <span>Who am I?</span>
         <div class="caption">
@@ -48,37 +49,37 @@
           facere exercitationem vitae, non quo expedita!
         </div>
       </div>
-      <div class="skills">
-        <div id="HTML"></div>
-        <div id="CSS3"></div>
-        <div id="ES6"></div>
-        <div id="React"></div>
-        <div id="NodeJS"></div>
-        <div id="PHP"></div>
-        <div id="SQL"></div>
-        <div id="Google"></div>
+      <div data-sal-duration='1200' data-sal='slide-left' data-sal-delay='1000' class="skills">
+        <div class="check" id="HTML"></div>
+        <div class="check" id="CSS3"></div>
+        <div class="check" id="ES6"></div>
+        <div class="check" id="React"></div>
+        <div class="check" id="NodeJS"></div>
+        <div class="check" id="PHP"></div>
+        <div class="check" id="SQL"></div>
+        <div class="check" id="Google"></div>
       </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
-    <h2>Projects</h2>
+    <h2 data-sal-duration='1200' data-sal='slide-up' data-sal-delay='300'>Projects</h2>
     <div class="wrapper">
       <div class="grid">
-        <div class="project-card">
+        <div data-sal-duration='1200' data-sal='zoom-in' data-sal-delay='300' class="project-card">
           <span class="project-title">Project Title</span>
           <img src="http://placehold.it/800x800">
         </div>
-        <div class="project-card">
+        <div data-sal-duration='1200' data-sal='zoom-in' data-sal-delay='300' class="project-card">
           <span class="project-title">Project Title</span>
           <img src="http://placehold.it/800x800">
         </div>
-        <div class="project-card">
+        <div data-sal-duration='1200' data-sal='zoom-in' data-sal-delay='300' class="project-card">
           <span class="project-title">Project Title</span>
           <img src="http://placehold.it/800x800">
         </div>
-        <div class="project-card">
+        <div data-sal-duration='1200' data-sal='zoom-in' data-sal-delay='300' class="project-card">
           <span class="project-title">Project Title</span>
           <img src="http://placehold.it/800x800">
         </div>
@@ -88,13 +89,13 @@
 
   <!-- CONTACT -->
   <section id="contact" class="flex">
-    <h2>Contact</h2>
+    <h2 data-sal-duration='1200' data-sal='slide-up' data-sal-delay='300'>Contact</h2>
     <div class="wrapper flex">
 
-      <input type="text" name="name" placeholder="Your Name">
-      <input type="email" name="email" placeholder="Your Email">
-      <textarea name="message" placeholder="Your Message"></textarea>
-      <div class="btn-send">Send Message</div>
+      <input data-sal-duration='1200' data-sal='slide-right' data-sal-delay='300' type="text" name="name" placeholder="Your Name">
+      <input data-sal-duration='1200' data-sal='slide-right' data-sal-delay='300' type="email" name="email" placeholder="Your Email">
+      <textarea data-sal-duration='1200' data-sal='slide-right' data-sal-delay='300' name="message" placeholder="Your Message"></textarea>
+      <div data-sal-duration='1200' data-sal='slide-left' data-sal-delay='300' class="btn-send">Send Message</div>
     </div>
   </section>
 
@@ -109,7 +110,14 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="../node_modules/sal.js/dist/sal.js"></script>
   <script type="module" src="js/main.js"></script>
+  <script>
+    sal({
+      threshold: 0.2,
+      once: false
+    });
+  </script>
 </body>
 
 </html>

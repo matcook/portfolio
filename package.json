@@ -18,6 +18,7 @@
   "homepage": "https://github.com/matcook/portfolio#readme",
   "dependencies": {
     "jump.js": "^1.0.2",
-    "node-sass": "^4.9.3"
+    "node-sass": "^4.9.3",
+    "sal.js": "^0.5.0"
   }
 }
