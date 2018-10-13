@@ -8,7 +8,7 @@ function makeChart(name, amount) {
     plotOptions: {
       radialBar: {
         hollow: {
-          size: '75%',
+          size: '65%',
         }
       },
     },
@@ -17,7 +17,6 @@ function makeChart(name, amount) {
 
   }
 
-  console.log(name);
   let chart = new ApexCharts(
     name,
     options
@@ -25,12 +24,11 @@ function makeChart(name, amount) {
   chart.render();
 }
 
-makeChart(HTML, 80);
-makeChart(CSS3, 90);
-makeChart(ES6, 90);
-makeChart(React, 90);
-makeChart(NodeJS, 90);
-makeChart(PHP, 90);
-makeChart(SQL, 90);
-
-makeChart(Google, 90);
+makeChart(HTML, 90);
+makeChart(CSS3, 80);
+makeChart(ES6, 80);
+makeChart(React, 70);
+makeChart(NodeJS, 70);
+makeChart(PHP, 60);
+makeChart(SQL, 60);
+makeChart(Google, 100);
