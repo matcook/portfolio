@@ -1,11 +1,29 @@
 import jump from '../../node_modules/jump.js/dist/jump.module.js';
 
-// Sticky Nav
+// Scroll functions
 
 window.onscroll = () => {
   stickyNav();
-  console.log(navbar.offsetTop);
+  let about = document.querySelector('#about');
+  let projects = document.querySelector('#projects');
+  let check = document.querySelectorAll('.check');
+  console.log(pageYOffset, 'page Y offset');
+  console.log(about.offsetTop);
+
+  if (pageYOffset >= 100 && pageYOffset <= projects.offsetTop && check[0].innerHTML === '') {
+    drawCharts();
+  } else if (pageYOffset > projects.offsetTop || pageYOffset < 100) {
+
+    for (let i = 0; i < check.length; i++) {
+      check[i].innerHTML = '';
+    }
+
+  }
+
 }
+
+
+// Sticky Nav
 
 let about = document.querySelector('#about');
 let navbar = document.querySelector('.navbar');
@@ -29,23 +47,33 @@ let contactBtn = document.querySelectorAll('li')[3];
 let enterBtn = document.querySelector('.btn');
 
 enterBtn.addEventListener('click', () => {
-  jump('#about');
+  jump('#about', {
+    duration: 2000
+  });
 });
 
 homeBtn.addEventListener('click', () => {
-  jump('#home');
+  jump('#home', {
+    duration: 2000
+  });
 });
 
 aboutBtn.addEventListener('click', () => {
-  jump('#about');
+  jump('#about', {
+    duration: 2000
+  });
 });
 
 projectsBtn.addEventListener('click', () => {
-  jump('#projects');
+  jump('#projects', {
+    duration: 2000
+  });
 });
 
 contactBtn.addEventListener('click', () => {
-  jump('#contact');
+  jump('#contact', {
+    duration: 2000
+  });
 });
 
 // Skill Charts
@@ -55,7 +83,10 @@ let makeChart = (name, amount) => {
     chart: {
       width: "100%",
 
-      type: "radialBar"
+      type: "radialBar",
+      animations: {
+        speed: 2500
+      },
     },
     plotOptions: {
       radialBar: {
@@ -72,11 +103,16 @@ let makeChart = (name, amount) => {
   chart.render();
 }
 
-makeChart(HTML, 90);
-makeChart(CSS3, 80);
-makeChart(ES6, 80);
-makeChart(React, 70);
-makeChart(NodeJS, 70);
-makeChart(PHP, 60);
-makeChart(SQL, 60);
-makeChart(Google, 100);
+let drawCharts = () => {
+
+
+  makeChart(HTML, 90);
+  makeChart(CSS3, 80);
+  makeChart(ES6, 80);
+  makeChart(React, 70);
+  makeChart(NodeJS, 70);
+  makeChart(PHP, 60);
+  makeChart(SQL, 60);
+  makeChart(Google, 100);
+
+}
