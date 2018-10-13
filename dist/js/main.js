@@ -1,7 +1,7 @@
 function makeChart(name, amount) {
   let options = {
     chart: {
-      width: '100%',
+      width: '110%',
 
       type: 'radialBar',
     },

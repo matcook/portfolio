@@ -188,16 +188,16 @@ nav {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
-      padding: 0 25px;
       margin-bottom: 50px;
       @include tablet {
         width: 50%;
       }
       @include desktop {
         width: 60%;
+        padding: 0 25px;
       }
       div {
-        // border: 1px solid color(primary);
+        padding: 0;
         width: 50%;
         @include desktop {
           width: calc(100% / 3);
