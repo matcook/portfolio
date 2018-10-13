@@ -33,18 +33,23 @@ body {
   background-color: #040f16;
   font-family: "Open Sans", sans-serif; }
 
-.btn {
+.btn,
+.btn-send {
   color: #d90368;
   font-size: 1em;
   font-weight: 800;
   border: 2px solid #d90368;
   border-radius: 3px; }
+  .btn:hover,
+  .btn-send:hover {
+    cursor: pointer; }
 
 #home,
 #about,
 #projects,
 #contact {
-  width: 100%; }
+  width: 100%;
+  padding-top: 30px; }
 
 .wrapper {
   height: 100%;
@@ -63,11 +68,23 @@ nav {
     justify-content: space-between; }
     nav ul li {
       display: inline;
-      padding: 15px; }
-      nav ul li a {
-        text-decoration: none;
-        color: #e7ecef;
-        font-family: "Proza Libre", sans-serif; }
+      padding: 15px;
+      color: #e7ecef;
+      font-family: "Proza Libre", sans-serif; }
+      nav ul li:hover {
+        cursor: pointer;
+        color: #d90368;
+        transition: all 0.3s; }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  background: #040f16; }
+
+.sticky + #about {
+  margin-top: 60px; }
 
 #home {
   color: #e7ecef;
@@ -221,7 +238,7 @@ nav {
     #contact .wrapper textarea {
       height: 120px;
       resize: none; }
-    #contact .wrapper .btn {
+    #contact .wrapper .btn-send {
       height: 40px;
       line-height: 35px;
       width: 130px;
