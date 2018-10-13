@@ -1,14 +1,14 @@
 function makeChart(name, amount) {
   let options = {
     chart: {
-      width: '110%',
+      width: '100%',
 
       type: 'radialBar',
     },
     plotOptions: {
       radialBar: {
         hollow: {
-          size: '70%',
+          size: '75%',
         }
       },
     },
@@ -27,7 +27,7 @@ function makeChart(name, amount) {
 
 makeChart(HTML, 80);
 makeChart(CSS3, 90);
-makeChart(JavaScript, 90);
+makeChart(ES6, 90);
 makeChart(React, 90);
 makeChart(NodeJS, 90);
 makeChart(PHP, 90);
