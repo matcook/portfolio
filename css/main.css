@@ -133,7 +133,7 @@ nav {
           width: 50%; } }
       @media (min-width: 1248px) {
         #projects .wrapper .grid .project-card {
-          width: calc(100%/3); } }
+          width: calc(100% / 3); } }
       #projects .wrapper .grid .project-card .project-title {
         display: block;
         width: 100%;
