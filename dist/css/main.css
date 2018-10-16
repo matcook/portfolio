@@ -48,14 +48,7 @@ body {
 #about,
 #projects,
 #contact {
-  width: 100%;
-  padding-top: 60px; }
-  @media (min-width: 1248px) {
-    #home,
-    #about,
-    #projects,
-    #contact {
-      padding-top: 30px; } }
+  width: 100%; }
 
 .wrapper {
   height: 100%;
@@ -81,16 +74,6 @@ nav {
         cursor: pointer;
         color: #d90368;
         transition: all 0.3s; }
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 2;
-  background: #040f16; }
-
-.sticky + #about {
-  margin-top: 60px; }
 
 #home {
   color: #e7ecef;
@@ -132,10 +115,12 @@ nav {
   background: #e7ecef; }
   @media (min-width: 750px) {
     #about h2 {
-      height: 120px; } }
+      height: 120px;
+      line-height: 120px; } }
   @media (min-width: 1248px) {
     #about h2 {
-      height: 170px; } }
+      height: 170px;
+      line-height: 170px; } }
   #about .wrapper {
     max-width: 1250px;
     margin: 0 auto; }
@@ -145,12 +130,10 @@ nav {
       align-items: center; }
       @media (min-width: 750px) {
         #about .wrapper .bio {
-          width: 50%;
-          margin-top: 30px; } }
+          width: 50%; } }
       @media (min-width: 1248px) {
         #about .wrapper .bio {
-          width: 40%;
-          margin-top: 30px; } }
+          width: 40%; } }
       #about .wrapper .bio img {
         max-width: 80%;
         border-radius: 100%; }
@@ -166,7 +149,9 @@ nav {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
-      margin-bottom: 50px; }
+      align-content: space-between;
+      margin-bottom: 50px;
+      padding: 0 25px; }
       @media (min-width: 750px) {
         #about .wrapper .skills {
           width: 50%; } }
@@ -174,13 +159,31 @@ nav {
         #about .wrapper .skills {
           width: 60%;
           padding: 0 25px; } }
-      #about .wrapper .skills div {
-        padding: 0;
-        width: 50%; }
-        @media (min-width: 1248px) {
-          #about .wrapper .skills div {
-            width: calc(100% / 3);
-            height: calc(100% / 3); } }
+      #about .wrapper .skills .bar {
+        display: flex;
+        height: 30px;
+        width: 100%;
+        background: #dadee1;
+        position: relative;
+        margin-bottom: 10px; }
+        #about .wrapper .skills .bar .bar-fill {
+          background: #d90368;
+          width: 0px;
+          height: 100%;
+          position: absolute;
+          left: 100px;
+          transition: all 2s; }
+        #about .wrapper .skills .bar .tag {
+          color: #e7ecef;
+          background: #040f16;
+          width: 100px;
+          text-align: center;
+          line-height: 30px; }
+        #about .wrapper .skills .bar span {
+          position: absolute;
+          right: 0;
+          line-height: 30px;
+          padding-right: 10px; }
 
 #projects {
   background: #dadee1;

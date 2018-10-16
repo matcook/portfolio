@@ -91,11 +91,6 @@ body {
 #contact {
   // min-height: 100vh;
   width: 100%;
-  padding-top: 60px;
-
-  @include desktop {
-    padding-top: 30px;
-  }
 }
 
 .wrapper {
@@ -132,17 +127,7 @@ nav {
   }
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 2;
-  background: color(primary);
-}
 
-.sticky+#about {
-  margin-top: 60px;
-}
 
 // HOME SECTION
 #home {
@@ -198,10 +183,12 @@ nav {
   h2 {
     @include tablet {
       height: 120px;
+      line-height: 120px;
     }
 
     @include desktop {
       height: 170px;
+      line-height: 170px;
     }
   }
 
@@ -216,12 +203,12 @@ nav {
 
       @include tablet {
         width: 50%;
-        margin-top: 30px;
+        // margin-top: 30px;
       }
 
       @include desktop {
         width: 40%;
-        margin-top: 30px;
+        // margin-top: 30px;
       }
 
       img {
@@ -246,7 +233,10 @@ nav {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
+      align-content: space-between;
       margin-bottom: 50px;
+      padding: 0 25px;
+      // background: #040f16;
 
       @include tablet {
         width: 50%;
@@ -257,15 +247,43 @@ nav {
         padding: 0 25px;
       }
 
-      div {
-        padding: 0;
-        width: 50%;
+      .bar {
+        display: flex;
+        height: 30px;
+        width: 100%;
+        background: color(secondary-dark);
+        position: relative;
+        margin-bottom: 10px;
 
-        @include desktop {
-          width: calc(100% / 3);
-          height: calc(100% / 3);
+        .bar-fill {
+          background: color(accent);
+          width: 0px;
+          height: 100%;
+          position: absolute;
+          left: 100px;
+          transition: all 2s;
+        }
+
+        .tag {
+          color: color(secondary);
+          background: color(primary);
+          width: 100px;
+          text-align: center;
+          line-height: 30px;
+        }
+
+        span {
+          position: absolute;
+          right: 0;
+          line-height: 30px;
+          padding-right: 10px;
         }
       }
+
+
+
+
+
     }
   }
 }
