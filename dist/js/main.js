@@ -1,5 +1,9 @@
+window.onload = () => {
+  navBtns();
+}
+
 window.onscroll = () => {
-  if (pageYOffset >= document.querySelector('#about').offsetTop) {
+  if (pageYOffset >= document.querySelector('#about').offsetTop - 200) {
     runGraph();
   }
 
@@ -14,8 +18,46 @@ window.onscroll = () => {
 
 };
 
+document.querySelector('.btn').addEventListener('click', () => {
+  scrollTo(document.documentElement, document.querySelector('#about').offsetTop - 60, 100);
+})
+
+let navBtns = () => {
+  let navBtn = document.querySelectorAll('li');
+
+  for (let i = 0; i < navBtn.length; i++) {
+    navBtn[i].addEventListener('click', () => {
+      scrollTo(document.documentElement, document.querySelector(navBtn[i].dataset.destination).offsetTop - 60, 100);
+    })
+  }
+
+}
 
 
+
+let scrollTo = (element, to, duration) => {
+  let start = element.scrollTop,
+    change = to - start,
+    currentTime = 0,
+    increment = 5;
+
+  let animateScroll = function () {
+    currentTime += increment;
+    let val = Math.easeInOutQuad(currentTime, start, change, duration);
+    element.scrollTop = val;
+    if (currentTime < duration) {
+      requestAnimationFrame(animateScroll);
+    }
+  };
+  animateScroll();
+}
+
+Math.easeInOutQuad = function (t, b, c, d) {
+  t /= d / 2;
+  if (t < 1) return c / 2 * t * t + b;
+  t--;
+  return -c / 2 * (t * (t - 2) - 1) + b;
+};
 
 
 
