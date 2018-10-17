@@ -1,9 +1,14 @@
 window.onload = () => {
   navBtns();
+
+  if (pageYOffset > document.querySelector('.skills') - 200) {
+    runGraph();
+  }
 }
 
+
 window.onscroll = () => {
-  if (pageYOffset >= document.querySelector('#about').offsetTop - 200) {
+  if (pageYOffset >= document.querySelector('.skills').offsetTop - 300) {
     runGraph();
   }
 
@@ -16,10 +21,12 @@ window.onscroll = () => {
     document.querySelector('#about').removeAttribute('style');
   }
 
+
+
 };
 
 document.querySelector('.btn').addEventListener('click', () => {
-  scrollTo(document.documentElement, document.querySelector('#about').offsetTop - 60, 100);
+  scrollTo(document.documentElement, document.querySelector('#about').offsetTop - 60, 200);
 })
 
 let navBtns = () => {
@@ -27,13 +34,10 @@ let navBtns = () => {
 
   for (let i = 0; i < navBtn.length; i++) {
     navBtn[i].addEventListener('click', () => {
-      scrollTo(document.documentElement, document.querySelector(navBtn[i].dataset.destination).offsetTop - 60, 100);
+      scrollTo(document.documentElement, document.querySelector(navBtn[i].dataset.destination).offsetTop - 60, 200);
     })
   }
-
 }
-
-
 
 let scrollTo = (element, to, duration) => {
   let start = element.scrollTop,
@@ -58,8 +62,6 @@ Math.easeInOutQuad = function (t, b, c, d) {
   t--;
   return -c / 2 * (t * (t - 2) - 1) + b;
 };
-
-
 
 let runGraph = () => {
   let bar = document.querySelectorAll(".bar-fill");
