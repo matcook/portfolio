@@ -48,6 +48,16 @@ body {
   height: 100%;
   max-width: 1200px; }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 2; }
+
+.navbar {
+  width: 100%;
+  background: #040f16;
+  border-bottom: solid 2px #d90368; }
+
 nav {
   height: 60px;
   align-items: center;
@@ -167,8 +177,11 @@ nav {
           height: 100%;
           position: absolute;
           left: 80px;
-          transition: all 2s;
+          transition: all 1s;
           border-radius: 0 2px 2px 0; }
+          @media (min-width: 1248px) {
+            #about .wrapper .skills .bar .bar-fill {
+              transition: all 1.5s; } }
         #about .wrapper .skills .bar .tag {
           color: #e7ecef;
           background: #040f16;
@@ -178,11 +191,18 @@ nav {
           font-size: 0.8em;
           border-radius: 2px 0 0 2px; }
         #about .wrapper .skills .bar span {
+          display: none;
           position: absolute;
           right: 0;
           line-height: 30px;
           padding-right: 10px;
           font-size: 0.8em; }
+          @media (min-width: 750px) {
+            #about .wrapper .skills .bar span {
+              display: inline; } }
+          @media (min-width: 1248px) {
+            #about .wrapper .skills .bar span {
+              display: inline; } }
 
 #projects {
   background: #dadee1;
