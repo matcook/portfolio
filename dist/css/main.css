@@ -44,12 +44,6 @@ body {
   .btn-send:hover {
     cursor: pointer; }
 
-#home,
-#about,
-#projects,
-#contact {
-  width: 100%; }
-
 .wrapper {
   height: 100%;
   max-width: 1200px; }
@@ -165,25 +159,30 @@ nav {
         width: 100%;
         background: #dadee1;
         position: relative;
-        margin-bottom: 10px; }
+        margin-bottom: 10px;
+        border-radius: 0 2px 2px 0; }
         #about .wrapper .skills .bar .bar-fill {
           background: #d90368;
           width: 0px;
           height: 100%;
           position: absolute;
-          left: 100px;
-          transition: all 2s; }
+          left: 80px;
+          transition: all 2s;
+          border-radius: 0 2px 2px 0; }
         #about .wrapper .skills .bar .tag {
           color: #e7ecef;
           background: #040f16;
-          width: 100px;
+          width: 80px;
           text-align: center;
-          line-height: 30px; }
+          line-height: 30px;
+          font-size: 0.8em;
+          border-radius: 2px 0 0 2px; }
         #about .wrapper .skills .bar span {
           position: absolute;
           right: 0;
           line-height: 30px;
-          padding-right: 10px; }
+          padding-right: 10px;
+          font-size: 0.8em; }
 
 #projects {
   background: #dadee1;
