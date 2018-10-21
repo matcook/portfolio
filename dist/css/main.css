@@ -73,11 +73,16 @@ nav {
       display: inline;
       padding: 15px;
       color: #e7ecef;
-      font-family: "Proza Libre", sans-serif; }
+      font-family: "Proza Libre", sans-serif;
+      transition: color 0.3s;
+      text-decoration: none; }
       nav ul li:hover {
         cursor: pointer;
         color: #d90368;
         transition: all 0.3s; }
+
+.active {
+  color: #d90368; }
 
 #home {
   color: #e7ecef;
