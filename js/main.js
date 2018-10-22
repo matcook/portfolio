@@ -5,7 +5,6 @@ let home = document.querySelector('#home');
 let about = document.querySelector("#about");
 let projects = document.querySelector("#projects");
 let contact = document.querySelector("#contact");
-let footer = document.querySelector('footer');
 
 window.onload = () => {
   navBtns();
@@ -60,7 +59,7 @@ let activeLinks = () => {
   home.offsetTop <= pageYOffset && pageYOffset < about.offsetTop - 70 ? navBtn[0].classList.add("active") : navBtn[0].classList.remove("active");
   about.offsetTop - 70 <= pageYOffset && pageYOffset < projects.offsetTop - 70 ? navBtn[1].classList.add("active") : navBtn[1].classList.remove("active");
   projects.offsetTop - 70 <= pageYOffset && pageYOffset < contact.offsetTop - 70 ? navBtn[2].classList.add("active") : navBtn[2].classList.remove("active");
-  contact.offsetTop - 70 <= pageYOffset && pageYOffset < footer.offsetTop ? navBtn[3].classList.add("active") : navBtn[3].classList.remove("active");
+  contact.offsetTop - 70 <= pageYOffset ? navBtn[3].classList.add("active") : navBtn[3].classList.remove("active");
 }
 
 let scrollTo = (element, to, duration) => {
