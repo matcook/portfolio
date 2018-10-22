@@ -1,77 +1,66 @@
 //VARIABLES
 
-$colors: (primary: #040f16,
-secondary: #e7ecef,
-secondary-dark: #dadee1,
-accent: #d90368);
+$colors: (
+  primary: #040f16,
+  secondary: #e7ecef,
+  secondary-dark: #dadee1,
+  accent: #d90368
+);
 
-$font-heading: "Proza Libre",
-sans-serif;
-$font-body: "Open Sans",
-sans-serif;
+$font-heading: "Proza Libre", sans-serif;
+$font-body: "Open Sans", sans-serif;
 $background: url("../images/bg1.jpg");
-
 // MIXINS
 @mixin desktop {
   @media (min-width: 1248px) {
     @content;
   }
 }
-
 @mixin tablet {
   @media (min-width: 750px) {
     @content;
   }
 }
-
 // FUNCTIONS
 @function color($color-name) {
   @return map-get($colors, $color-name);
 }
-
 // GENERAL, RESETS, ETC
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 .flex {
   display: flex;
   flex-wrap: wrap;
 }
-
 h1,
 h2,
 span {
   font-family: $font-heading;
 }
-
 h2 {
   font-size: 2em;
   line-height: 100px;
   height: 100px;
   text-align: center;
   width: 100%;
-
   @include tablet {
     font-size: 2.5em;
     height: 150px;
     line-height: 150px;
   }
-
   @include desktop {
     font-size: 3em;
     height: 200px;
     line-height: 200px;
   }
 }
-
 body {
   background-color: color(primary);
   font-family: $font-body;
 }
-
 .btn,
 .btn-send {
   color: color(accent);
@@ -79,43 +68,36 @@ body {
   font-weight: 800;
   border: 2px solid color(accent);
   border-radius: 3px;
-
   &:hover {
     cursor: pointer;
   }
 }
-
 .wrapper {
   height: 100%;
   max-width: 1200px;
 }
-
 // NAV BAR
 .sticky {
   position: fixed;
   top: 0;
   z-index: 2;
 }
-
 .navbar {
   width: 100%;
   background: color(primary);
   border-bottom: solid 2px color(accent);
 }
-
 nav {
   height: 60px;
   align-items: center;
   margin: 0 auto;
   max-width: 1240px;
   background: color(primary);
-
   ul {
     list-style-type: none;
     width: 100%;
     max-width: 400px;
     justify-content: space-between;
-
     li {
       display: inline;
       padding: 15px;
@@ -123,7 +105,6 @@ nav {
       font-family: $font-heading;
       transition: color 0.3s;
       text-decoration: none;
-
       &:hover {
         cursor: pointer;
         color: color(accent);
@@ -132,11 +113,9 @@ nav {
     }
   }
 }
-
 .active {
   color: color(accent);
 }
-
 // HOME SECTION
 #home {
   color: color(secondary);
@@ -147,7 +126,6 @@ nav {
   background-size: cover;
   position: relative;
   height: 100vh;
-
   &:after {
     content: "";
     display: block;
@@ -159,17 +137,14 @@ nav {
     background: color(primary);
     opacity: 0.95;
   }
-
   h1 {
     text-align: center;
     font-size: 2em;
     z-index: 1;
-
     @include desktop {
       font-size: 2em;
     }
   }
-
   .btn {
     height: 40px;
     width: 160px;
@@ -177,64 +152,58 @@ nav {
     padding: 5px;
     margin-top: 20px;
     z-index: 1;
-
     i {
       padding-left: 10px;
     }
   }
 }
-
 // ABOUT SECTION
 #about {
   background: color(secondary);
-
   h2 {
     @include tablet {
       height: 120px;
       line-height: 120px;
     }
-
     @include desktop {
       height: 170px;
       line-height: 170px;
     }
   }
-
   .wrapper {
     max-width: 1250px;
     margin: 0 auto;
-
     .bio {
       display: flex;
       flex-direction: column;
       align-items: center;
-
       @include tablet {
         width: 50%; // margin-top: 30px;
       }
-
       @include desktop {
         width: 40%; // margin-top: 30px;
       }
-
       img {
         max-width: 80%;
         border-radius: 100%;
       }
-
       span {
         margin: 25px 0 20px 0;
         font-weight: 800;
-        font-size: 1.2em;
+        font-size: 1.6em;
       }
-
       .caption {
         text-align: center;
         padding: 0 25px;
-        margin-bottom: 50px;
+        margin-bottom: 25px;
+        @include tablet {
+          margin-bottom: 50px;
+        }
+        @include desktop {
+          margin-bottom: 50px;
+        }
       }
     }
-
     .skills {
       width: 100%;
       display: flex;
@@ -242,17 +211,20 @@ nav {
       align-content: space-between;
       margin-bottom: 50px;
       padding: 0 25px;
-
       // background: #040f16;
       @include tablet {
         width: 50%;
       }
-
       @include desktop {
         width: 60%;
         padding: 0 25px;
       }
-
+      h3 {
+        font-size: 1.6em;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 25px;
+      }
       .bar {
         display: flex;
         height: 30px;
@@ -261,7 +233,6 @@ nav {
         position: relative;
         margin-bottom: 10px;
         border-radius: 0 2px 2px 0;
-
         .bar-fill {
           background: color(accent);
           width: 0px;
@@ -270,12 +241,10 @@ nav {
           left: 80px;
           transition: all 1s;
           border-radius: 0 2px 2px 0;
-
           @include desktop {
             transition: all 1.5s;
           }
         }
-
         .tag {
           color: color(secondary);
           background: color(primary);
@@ -285,7 +254,6 @@ nav {
           font-size: 0.8em;
           border-radius: 2px 0 0 2px;
         }
-
         span {
           display: none;
           position: absolute;
@@ -293,11 +261,9 @@ nav {
           line-height: 30px;
           padding-right: 10px;
           font-size: 0.8em;
-
           @include tablet {
             display: inline;
           }
-
           @include desktop {
             display: inline;
           }
@@ -306,45 +272,36 @@ nav {
     }
   }
 }
-
 // PROJECTS SECTION
 #projects {
   background: color(secondary-dark);
   height: auto;
-
   .wrapper {
     max-width: 1250px;
     margin: 0 auto;
-
     .grid {
       @include tablet {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
       }
-
       .project-card {
         padding: 0 25px;
         margin-bottom: 50px;
-
         span {
           border-radius: 3px 3px 0 0;
         }
-
         img {
           display: block;
           max-width: 100%;
           border-radius: 0 0 3px 3px;
         }
-
         @include tablet {
           width: 50%;
         }
-
         @include desktop {
           width: calc(100% / 3);
         }
-
         .project-title {
           display: block;
           width: 100%;
@@ -358,13 +315,11 @@ nav {
     }
   }
 }
-
 // CONTACT SECTION
 #contact {
   color: color(secondary);
   justify-content: center;
   height: auto;
-
   .wrapper {
     flex-direction: column;
     justify-content: flex-start;
@@ -373,7 +328,6 @@ nav {
     padding: 10px 25px;
     font-size: 1em;
     min-height: calc(100vh - 120px);
-
     input,
     textarea {
       min-width: 300px;
@@ -383,18 +337,15 @@ nav {
       background: color(secondary);
       border: none;
       border-radius: 3px;
-
       &::placeholder {
         font-size: 1em;
         font-family: $font-body;
       }
     }
-
     textarea {
       height: 120px;
       resize: none;
     }
-
     .btn-send {
       height: 40px;
       line-height: 35px;
@@ -405,5 +356,4 @@ nav {
     }
   }
 }
-
 // FOOTER

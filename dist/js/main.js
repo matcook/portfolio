@@ -1,30 +1,22 @@
 let navbar = document.querySelector(".navbar");
 let navBtn = document.querySelectorAll("li");
 let skills = document.querySelector(".skills");
+let home = document.querySelector('#home');
 let about = document.querySelector("#about");
 let projects = document.querySelector("#projects");
 let contact = document.querySelector("#contact");
+let footer = document.querySelector('footer');
 
 window.onload = () => {
   navBtns();
-
-  if (pageYOffset > skills.offsetTop - 300) {
-    runGraph();
-  }
+  activeLinks();
+  stickyNav();
 };
 
 window.onscroll = () => {
-  if (pageYOffset >= skills.offsetTop - 300) {
-    runGraph();
-  }
-
-  if (pageYOffset >= about.offsetTop - 60) {
-    navbar.classList.add("sticky");
-    about.style.marginTop = "60px";
-  } else {
-    navbar.classList.remove("sticky");
-    about.removeAttribute("style");
-  }
+  runGraph();
+  activeLinks();
+  stickyNav();
 };
 
 document.querySelector(".btn").addEventListener("click", () => {
@@ -33,31 +25,43 @@ document.querySelector(".btn").addEventListener("click", () => {
 
 let navBtns = () => {
   for (let i = 0; i < navBtn.length; i++) {
-    navBtn[i].addEventListener("click", (e) => {
+    navBtn[i].addEventListener("click", () => {
       scrollTo(
         document.documentElement,
         document.querySelector(navBtn[i].dataset.destination).offsetTop - 60,
         200
       );
-      for (let i = 0; i < navBtn.length; i++) {
-        if (navBtn[i] != e.target) {
-          navBtn[i].classList.remove('active');
-        } else {
-          navBtn[i].classList.add('active');
-        }
-      }
     });
   }
 };
 
-let runGraph = () => {
-  let bar = document.querySelectorAll(".bar-fill");
+let stickyNav = () => {
+  if (pageYOffset >= about.offsetTop - 60) {
+    navbar.classList.add("sticky");
+    about.style.marginTop = "60px";
+  } else {
+    navbar.classList.remove("sticky");
+    about.removeAttribute("style");
+  }
+}
 
-  for (let i = 0; i < bar.length; i++) {
-    let percent = bar[i].dataset.percent;
-    bar[i].style.width = `calc(${percent} - 80px)`;
+let runGraph = () => {
+  if (pageYOffset >= skills.offsetTop - window.innerHeight) {
+    let bar = document.querySelectorAll(".bar-fill");
+
+    for (let i = 0; i < bar.length; i++) {
+      let percent = bar[i].dataset.percent;
+      bar[i].style.width = `calc(${percent} - 80px)`;
+    }
   }
 };
+
+let activeLinks = () => {
+  home.offsetTop <= pageYOffset && pageYOffset < about.offsetTop - 70 ? navBtn[0].classList.add("active") : navBtn[0].classList.remove("active");
+  about.offsetTop - 70 <= pageYOffset && pageYOffset < projects.offsetTop - 70 ? navBtn[1].classList.add("active") : navBtn[1].classList.remove("active");
+  projects.offsetTop - 70 <= pageYOffset && pageYOffset < contact.offsetTop - 70 ? navBtn[2].classList.add("active") : navBtn[2].classList.remove("active");
+  contact.offsetTop - 70 <= pageYOffset && pageYOffset < footer.offsetTop ? navBtn[3].classList.add("active") : navBtn[3].classList.remove("active");
+}
 
 let scrollTo = (element, to, duration) => {
   let start = element.scrollTop,

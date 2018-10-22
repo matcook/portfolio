@@ -149,11 +149,17 @@ nav {
       #about .wrapper .bio span {
         margin: 25px 0 20px 0;
         font-weight: 800;
-        font-size: 1.2em; }
+        font-size: 1.6em; }
       #about .wrapper .bio .caption {
         text-align: center;
         padding: 0 25px;
-        margin-bottom: 50px; }
+        margin-bottom: 25px; }
+        @media (min-width: 750px) {
+          #about .wrapper .bio .caption {
+            margin-bottom: 50px; } }
+        @media (min-width: 1248px) {
+          #about .wrapper .bio .caption {
+            margin-bottom: 50px; } }
     #about .wrapper .skills {
       width: 100%;
       display: flex;
@@ -168,6 +174,11 @@ nav {
         #about .wrapper .skills {
           width: 60%;
           padding: 0 25px; } }
+      #about .wrapper .skills h3 {
+        font-size: 1.6em;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 25px; }
       #about .wrapper .skills .bar {
         display: flex;
         height: 30px;
